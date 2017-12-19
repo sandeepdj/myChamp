@@ -19,7 +19,12 @@ export class LoginComponent implements OnInit {
     var username = this.user.username;
     var password = this.user.password;
     if(username=='admin' && password=='admin'){
-         var user = 'sandeepjadhav';
+         var user ={
+           "name":"sandeep Jadhav",
+           "mobile":7899551677,
+           "City":"bangalore"
+         };
+         
          localStorage.setItem('currentUser', JSON.stringify(user));
          this.router.navigate(['/home']);
 

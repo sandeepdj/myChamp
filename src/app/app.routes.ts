@@ -12,20 +12,19 @@ import { AuthGuard } from './_guards/index';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component';
-
+import { HeaderComponent } from './components/app-header'
+import { LayoutComponent } from './components/app-layout/layout.component';
 
 export const routes: Routes = [
-   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
     { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent,canActivate: [AuthGuard]  },
-    // { path: 'Sales', component: HeadersComponent,
-    //  children: [
-    //     { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
-    //     { path: 'Dashboard', component: DashabordComponent } 
-    //     ]
-    // },
-    // {path: '**', redirectTo: 'Login', pathMatch: 'full'}
+     { path: 'myChamp', component: LayoutComponent,canActivate: [AuthGuard] ,
+     children: [
+        { path: '', redirectTo: 'Home', pathMatch: 'full' },
+        { path: 'Home', component: HomeComponent } 
+        ]
+    },
+    {path: '**', redirectTo: 'Login', pathMatch: 'full'}
   ];
 
 

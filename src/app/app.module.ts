@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
- import { AppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { MaterialModule } from './app.material';
 import { AppRoutingModule } from './app.routes';
 import { AuthGuard } from './_guards/index';
@@ -21,6 +21,7 @@ import {
 import { HomeComponent } from './views/home/home.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { LoginComponent } from './views/login/login.component';
+import { LayoutComponent } from './components/app-layout/layout.component';
  
 const APP_COMPONENTS = [
   HeaderComponent,
@@ -33,10 +34,10 @@ const APP_COMPONENTS = [
   declarations: [
     AppComponent,
     APP_COMPONENTS,
-   
     HomeComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

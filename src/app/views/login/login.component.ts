@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
          };
          
          localStorage.setItem('currentUser', JSON.stringify(user));
-         this.router.navigate(['/home']);
+         this.router.navigate(['/myChamp']);
 
     }else{
         alert("invalid");

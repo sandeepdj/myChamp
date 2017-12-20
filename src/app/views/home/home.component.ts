@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   currentUser: any;
+  countires:any;
   constructor(private router: Router,private http: HttpClient) { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   
@@ -22,8 +23,8 @@ export class HomeComponent implements OnInit {
   loadEmployees(){
     this.http.get<any>('http://localhost:8080/angular4/myChampApi/v1/country').subscribe(
       data => {
-        console.log(data);
-    
+        
+        this.countires = data.countryData
       },
       err => {
         console.log("Error occured.")

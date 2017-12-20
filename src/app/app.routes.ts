@@ -14,6 +14,7 @@ import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/app-header'
 import { LayoutComponent } from './components/app-layout/layout.component';
+import { RegistrationComponent } from './views/registration/registration.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -21,7 +22,8 @@ export const routes: Routes = [
      { path: 'myChamp', component: LayoutComponent,canActivate: [AuthGuard] ,
      children: [
         { path: '', redirectTo: 'Home', pathMatch: 'full' },
-        { path: 'Home', component: HomeComponent } 
+        { path: 'Home', component: HomeComponent } ,
+        { path: 'Registration', component: RegistrationComponent } 
         ]
     },
     {path: '**', redirectTo: 'Login', pathMatch: 'full'}

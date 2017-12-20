@@ -15,6 +15,21 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  scode = [
+    {value: 'SP', viewValue: 'SP'},
+    {value: 'SG', viewValue: 'SG'}
+    
+  ];
+
+  selectedCode = 'SP';
+  selectedYear = "1718";
+  years = [
+    {value: '1718', viewValue: '2017-2018'},
+    {value: '1617', viewValue: '2016-2017'},
+    {value: '1516', viewValue: '2015-2016'}
+  ];
+
+
   doLogin(){
     var username = this.user.username;
     var password = this.user.password;
